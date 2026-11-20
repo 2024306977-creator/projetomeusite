@@ -1,0 +1,20 @@
+.fundo-suave {
+  background-color: var(--bs-blue-050); /* Usa o azul bem claro do seu arquivo */
+}
+
+.foto-perfil {
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 4px solid var(--bs-blue-200);
+}
+
+/*  animação */
+.texto-animado {
+  animation: aparecer 0.8s ease-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
