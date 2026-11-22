@@ -9,20 +9,38 @@
 </head>
 <body>
   <!-- MENU DE NAVEGAÇÃO -->
-  <header class="topo py-3 border-bottom">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-      <a href="#inicio" class="logo d-flex align-items-center gap-2 text-decoration-none fw-bold">
-        <span>Meu Site pessoal</span>
-      </a>
+  <!-- MENU DE NAVEGAÇÃO COM 3 BARRINHAS (COMPUTADOR E CELULAR) -->
+  <header class="topo border-bottom">
+    <nav class="navbar py-3">
+      <div class="container">
+        <a href="#inicio" class="navbar-brand logo d-flex align-items-center gap-2 fw-bold">
+          <span>Meu Site pessoal</span>
+        </a>
 
-      <!-- Links do menu -->
-      <nav class="menu d-flex gap-3">
-        <a href="#inicio" class="text-decoration-none">Início</a>
-        <a href="#sobre" class="text-decoration-none">Sobre Mim</a>
-        <a href="#hobbiesepreferencias" class="text-decoration-none">Hobbies e Preferências</a>
-        <a href="#contato" class="text-decoration-none">Contato</a>
-      </nav>
-    </div>
+        <!-- Botão das 3 barrinhas -->
+        <button class="navbar-toggler" type="button" id="btnMenu" aria-controls="menuNavegacao" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links que abrem e fecham ao clicar nas 3 barrinhas -->
+        <div class="collapse navbar-collapse" id="menuNavegacao">
+          <ul class="navbar-nav ms-auto text-end pt-3 gap-2">
+            <li class="nav-item">
+              <a href="#inicio" class="nav-link">Início</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sobre" class="nav-link">Sobre Mim</a>
+            </li>
+            <li class="nav-item">
+              <a href="#familia" class="nav-link">Pessoas Importantes</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contato" class="nav-link">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!-- BANNER PRINCIPAL -->
@@ -35,7 +53,6 @@
 
         <div class="col-12 md:col-8 texto-animado">
           <h1>Olá! Seja bem-vindo(a)</h1>
-          <p class="lead">Este é o meu espaço pessoal para compartilhar </p>
           <a href="#contato" class="btn btn-primary">Fale comigo</a>
         </div>
       </div>
@@ -46,14 +63,22 @@
   <section id="sobre" class="secao py-5">
     <div class="container">
       <h2 class="titulo-secao texto-animado text-center mb-4">Um pouco sobre mim</h2>
-      <p>Meu nome é Isabeli Peretti, tenho 18 anos e moro na comunidade de Vista Alegre na cidade de Estação junto com minha família</p>
       <!-- Grid de 3 colunas -->
       <div class="row g-4">
         <div class="col-12 md:col-4">
           <div class="card h-100 p-3">
             <div class="card-body">
-              <h3 class="h5 card-title">Meus Hobbies</h3>
-              <p class="card-text">Gosto de ouvir música, ler, aprender sobre história, pintar, assistir séries e filmes, fazer crochê e gostaria de aprender tricô.</p>
+              <h3 class="h5 card-title">Quem sou eu?</h3>
+              <p class="card-text">Meu nome é Isabeli Peretti, tenho 18 anos e moro em Estação junto com minha família.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4">
+          <div class="card h-100 p-3">
+            <div class="card-body">
+              <h3 class="h5 card-title">Meus hobbies</h3>
+              <p class="card-text">Gosto de ouvir música, ler, aprender sobre história, pintar, assistir séries e filmes e fazer crochê.</p>
             </div>
           </div>
         </div>
@@ -71,15 +96,6 @@
                   <li>Comida: Massa</li>
                 </ul>
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 md:col-4">
-          <div class="card h-100 p-3">
-            <div class="card-body">
-              <h3 class="h5 card-title"></h3>
-              <p class="card-text"></p>
             </div>
           </div>
         </div>
@@ -119,30 +135,30 @@
   <section id="contato" class="secao py-5">
     <div class="container">
       <h2 class="titulo-secao texto-animado text-center mb-4">Deixe seu recado</h2>
-
       <div class="row justify-content-center">
         <div class="col-12 md:col-8 lg:col-6">
-            <form id="meuFormulario" class="formulario needs-validation" novalidate>
+            <!-- Exemplo de como deve ficar a estrutura do seu formulário -->
+            <form id="formContato" novalidate>
               <div class="mb-3">
-                <label for="nome" class="form-label">Seu Nome:</label>
-                <input type="text" id="nome" class="form-control" placeholder="Digite seu nome" required minlength="3">
-                <div class="invalid-feedback">Por favor, digite seu nome (mínimo 3 letras).</div>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Seu E-mail:</label>
-                <input type="email" id="email" class="form-control" placeholder="exemplo@email.com" required>
-                <div class="invalid-feedback">Digite um e-mail válido.</div>
+                <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="nome" required>
+                  <div class="invalid-feedback">Por favor, digite seu nome.</div>
               </div>
               <div class="mb-3">
-                <label for="mensagem" class="form-label">Mensagem:</label>
-                <textarea id="mensagem" class="form-control" rows="4" placeholder="Escreva sua mensagem..." required minlength="5"></textarea>
-                <div class="invalid-feedback">Escreva uma mensagem com pelo menos 5 caracteres.</div>
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" required>
+                <div class="invalid-feedback">Digite um e-mail válido (ex: nome@email.com).</div>
               </div>
-                <!-- Alerta-->
-              <div id="alertaSucesso" class="alert alert-success alert-dismissible fade d-none" role="alert">
-                  Recado enviado com sucesso!
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+              <div class="mb-3">
+                <label for="mensagem" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="mensagem" rows="3" required></textarea>
+                <div class="invalid-feedback">Escreva uma mensagem antes de enviar.</div>
               </div>
+                        <!-- Caixa da mensagem de sucesso (começa escondida com d-none) -->
+              <div id="alertaSucesso" class="alert alert-success alert-dismissible fade d-none mt-3" role="alert">
+                 Mensagem enviada com sucesso!
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
               <button type="submit" class="btn btn-primary w-100">Enviar recado</button>
             </form>
         </div>
@@ -156,7 +172,6 @@
       <p class="mb-0">© 2026 Minha Página Pessoal - Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="../js/bootstrap.bundle.min.js"></script>
   <script src="../js/script.js"></script>
 </body>
 </html>
