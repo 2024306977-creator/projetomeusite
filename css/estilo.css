@@ -1,73 +1,45 @@
-.fundo-suave {
-  background-color: var(--bs-blue-050); /* Usa o azul bem claro do seu arquivo */
-}
-
 .foto-perfil {
-  max-width: 240px;
-  aspect-ratio: 1 / 1;
+  max-width: 240px; /* limita largura*/
+  aspect-ratio: 1 / 1;/*define proporção quadrada*/
   object-fit: cover;
-  border: 4px solid var(--bs-blue-200);
 }
 
 /*  animação */
 .texto-animado {
-  animation: aparecer 0.8s ease-out;
+  animation: aparecer 0.8s ease-out; /* Aplica a animação aparecer por 0,8 segundo; ease-out começa mais rápido e termina mais devagar*/
 }
-
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 #carouselPeek {
-  max-width: 600px !important;
-  margin: 0 auto !important;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-#carouselPeek .carousel-inner {
-  position: relative !important;
-  width: 100% !important;
-  height: 400px !important;
+#carouselPeek .carousel-inner {/* área interna do carrossel*/
+  height: 400px;
   background-color: #ebe4dd;
-  border-radius: 24px;
-  overflow: hidden !important;
-  display: block !important;
-}
-
-/* Esconde todos os slides por padrão e zera margens do Bootstrap */
-#carouselPeek .carousel-item {
-  display: none !important;
-  width: 100% !important;
-  height: 400px !important;
-  margin: 0 !important;
-  float: none !important;
-  transform: none !important;
-}
-
-/* Mostra APENAS o slide ativo, perfeitamente centralizado */
-#carouselPeek .carousel-item.active {
-  display: block !important;
 }
 
 #carouselPeek .carousel-item img {
-  width: 100% !important;
-  height: 400px !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 auto !important;
+  height: 400px;
+  object-fit: contain; /*mostra a imagem inteira*/
 }
 
-/* Animação suave nos cards ao passar o mouse */
+@keyframes aparecer { /* define animação chamada aparecer*/
+  from { opacity: 0; transform: translateY(15px); }/*Início*/
+  to { opacity: 1; transform: translateY(0); }/*fim*/
+}
+/* Animação nos cards ao passar o mouse */
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  border-radius: 18px;
+  border-radius: 18px; /* As transições suavizam transformações e sombras por 0,3s; !important dá
+prioridade em conflitos; border-radius arredonda os cantos em 18px*/
 }
 
-.card:hover {
+.card:hover { /*Aplica-se quando o mouse está sobre o card. Move-o 8px para cima e cria sombra. rgba define
+vermelho, verde, azul e opacidade de 12%; os valores anteriores definem deslocamento e desfoque*/
   transform: translateY(-8px) !important; /* Sobe levemente o card */
   box-shadow: 0 14px 28px rgba(183, 36, 241, 0.12) !important; /* Cria uma sombra elegante */
 }
-/* Estilo visual da validação do formulário (compatível com seu Bootstrap 6) */
+/* Estilo visual da validação do formulário */
 .form-control.is-invalid {
   border-color: #dc3545 !important;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.2) !important;
@@ -82,22 +54,4 @@
   color: #dc3545 !important;
   font-size: 0.875rem;
   margin-top: 0.25rem;
-}
-
-#alertaSucesso {
-  background-color: #d1e7dd !important;
-  color: #0f5132 !important;
-  border: 1px solid #badbcc !important;
-  border-radius: 12px;
-  padding: 12px 16px;
-  position: relative;
-}
-.navbar-toggler {
-  border: 1px solid rgba(0, 0, 0, 0.25) !important;
-  border-radius: 10px;
-  padding: 6px 10px;
-}
-
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1) !important;
 }
